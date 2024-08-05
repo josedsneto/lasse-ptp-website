@@ -70,6 +70,7 @@ with st.container():
             We encorage you to discover the project [repository](https://github.com/lasseufpa/ptp-dal)
             """
         )
+        st.write("[Catalog >](https://nextcloud.lasseufpa.org/s/t5gqZjnftJrqN35)")
         st.write("[Download >](https://nextcloud.lasseufpa.org/s/F39ZH2yPjFPsqZ9)")
     with fh_img:
         st.image(testbed_img)
