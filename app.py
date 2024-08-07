@@ -4,7 +4,6 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-
 st.set_page_config(page_title="LASSE - PTP Synchronization", page_icon=":stopwatch:", layout="wide")
 
 def load_lottieurl(url):
@@ -15,16 +14,21 @@ def load_lottieurl(url):
 
 def local_css(file_name):
     with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}<\style>", unsafe_allow_html=True)
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
 
-# lottie_coding = load_lottie  url("https://app.lottiefiles.com/share/7925750f-a112-4e85-a7cb-d62d29decb81.json")
+# lottie_coding = load_lottieurl("https://app.lottiefiles.com/share/7925750f-a112-4e85-a7cb-d62d29decb81.json")
 path = "./clock-animation.json"
-with open(path,"r") as file: 
+with open(path, "r") as file:
     lottie_coding = json.load(file)
+
 img_testbed_demo = Image.open("images/testbed-demo.jpg")
 testbed_img = Image.open("images/testbed.png")
+logo_img = Image.open("images/LASSE_logo.png")
+
+# Add logo at the top
+st.image(logo_img, width=100)
 
 with st.container():
     st.subheader("Welcome :satellite_antenna:,")
@@ -40,8 +44,8 @@ with st.container():
         st.write("##")
         st.write(
             """
-            We aims to enhance the time synchronization over 6G networks and beyond. Our expertise
-            comprises several use cases such that:
+            We aim to enhance the time synchronization over 6G networks and beyond. Our expertise
+            comprises several use cases such as:
             - PTP networks with and without assisted nodes
             - Over-the-air synchronization
             - AI and synchronization algorithms
@@ -61,13 +65,13 @@ with st.container():
         st.write("##")
         st.write(
             """
-            Check it out the data we used in our works. Useful features are:
+            Check out the data we used in our works. Useful features are:
             - Traffic type (e.g. TDD)
             - Synchronization period
             - Number of RRUs
             - and so on
 
-            We encorage you to discover the project [repository](https://github.com/lasseufpa/ptp-dal)
+            We encourage you to discover the project [repository](https://github.com/lasseufpa/ptp-dal)
             """
         )
         st.write("[Catalog >](https://nextcloud.lasseufpa.org/s/t5gqZjnftJrqN35)")
@@ -79,11 +83,11 @@ with st.container():
     st.write("---")
     st.header("Testbed demo")
     st.write("##")
-    img_column, txt_column = st.columns((1,2))
+    img_column, txt_column = st.columns((1, 2))
     with img_column:
         st.image(img_testbed_demo)
     with txt_column:
-        st.subheader("PTP-Synchronized Ethernet Fronthaul Testbed Demonstration")    
+        st.subheader("PTP-Synchronized Ethernet Fronthaul Testbed Demonstration")
         st.write(
             """
             This video demonstrates the fronthaul testbed developed at the Federal \
@@ -99,7 +103,7 @@ with st.container():
 
 with st.container():
     st.write("---")
-    st.header("Contact us !")
+    st.header("Contact us!")
     st.write("##")
     contact_form = """
     <form action="https://formsubmit.co/nectxx@gmail.com" method="POST">
