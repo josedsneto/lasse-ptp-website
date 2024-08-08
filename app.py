@@ -28,7 +28,10 @@ testbed_img = Image.open("images/testbed.png")
 logo_img = Image.open("images/LASSE_logo.png")
 
 # Add logo at the top
-st.image(logo_img, width=100)
+with st.container():
+    col1, col2, col3 = st.columns([5,1,5])
+    with col2:
+        st.image(logo_img, use_column_width=True)
 
 with st.container():
     st.subheader("Welcome :satellite_antenna:,")
