@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  lasse-ptp-sync:
+    build: .
+    ports:
+      - "8501:8501"
+    container_name: lasse-ptp-sync-container
+    restart: unless-stopped
