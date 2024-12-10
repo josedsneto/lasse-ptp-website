@@ -1,5 +1,4 @@
-/* CSS Snippet from W3schools: https://www.w3schools.com/howto/howto_css_contact_form.asp */
-/* Style inputs with type="text", select elements and textareas */
+/* Estilos para o formulário de contato */
 input[type=message], input[type=email], input[type=text], textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
@@ -8,7 +7,7 @@ input[type=message], input[type=email], input[type=text], textarea {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
@@ -26,8 +25,17 @@ button[type=submit]:hover {
   background-color: #45a049;
 }
 
-
 /* Hide Streamlit Branding */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+
+.team-member {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
